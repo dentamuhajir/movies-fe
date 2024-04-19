@@ -21,8 +21,9 @@ const Movie = () => {
     
     return(
         <div>
-            <h2>Movie {myMovie.name}</h2>
+            <h2>Movie : {myMovie.title}</h2>
             <hr/>
+            <p>{myMovie.description}</p>
         </div>
     )
 }
