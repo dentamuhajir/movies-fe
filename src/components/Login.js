@@ -6,11 +6,19 @@ import { useOutletContext } from "react-router-dom"
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [jwtToken, setJwtToken] = useOutletContext()
+    const {jwtToken,setJwtToken} = useOutletContext()
+    const {alertMessage,setAlertMessage} = useOutletContext()
+    const {alertClassName,setAlertClassName} = useOutletContext()
+    
     const handleSubmit = (event) => {
         event.preventDefault()
         if(email === "admin@example.com") {
             setJwtToken("abc")
+            setAlertMessage("")
+            setAlertClassName("d-none")
+        } else {
+            setAlertMessage("invalid credentials")
+            setAlertClassName("alert-danger")
         }
     }
     return(
